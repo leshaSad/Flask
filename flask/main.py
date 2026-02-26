@@ -11,14 +11,13 @@ app.config['SECRET_KEY'] = 'yandexlyceum_secret_key'
 @app.route('/index/<username>')
 def index(username):
     param = {}
-    param['text1'] = "Миссия Колонизация Марса"
-    param['text2'] = "И на Марсе будут яблони цвести!"
     param['title'] = username
     return render_template('index.html', **param)
 
 @app.route('/odd_even')
 def odd_even():
-    return render_template('odd_even.html', number=10)
+    print('jfjjf')
+    return render_template('odd_even.html', number=8)
 
 @app.route('/success')
 def success():
@@ -135,4 +134,4 @@ def greeting(username):
 
 
 if __name__ == '__main__':
-    app.run(port=8080, host='127.0.0.1')
+    app.run(port=8081, host='127.0.0.1')
