@@ -44,7 +44,7 @@ def login():
         return redirect('/success')
     return render_template('login.html', title='Авторизация', form=form)
 
-@app.route('/image_sample')
+@app.route('/image_mars')
 def image():
     return f'''<!doctype html>
                 <html lang="en">
