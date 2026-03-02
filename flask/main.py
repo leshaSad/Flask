@@ -7,12 +7,12 @@ from forms.loginform import LoginForm
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'yandexlyceum_secret_key'
 
-@app.route('/<username>')
-@app.route('/index/<username>')
-def index(username):
+@app.route('/<title>')
+@app.route('/index/<title>')
+def index(title):
     param = {}
-    param['title'] = username
-    return render_template('index.html', **param)
+    param['title'] = title
+    return render_template('base.html', **param)
 
 @app.route('/odd_even')
 def odd_even():
