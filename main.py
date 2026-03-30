@@ -1,7 +1,7 @@
 import os
 
 from flask import Flask, url_for, request, render_template
-from data import db_session
+from data import db_session, jobs_api
 from flask_restful import reqparse, abort, Api, Resource
 from data.users import User
 from data.jobs import Jobs
@@ -367,9 +367,7 @@ def table(gender, age):
 
 
 if __name__ == '__main__':
-    # для списка объектов
-    api.add_resource(UsersListResource, '/api/v2/news')
-
-    # для одного объекта
-    api.add_resource(UsersResource, '/api/v2/news/<int:news_id>')
+    app.register_blueprint(jobs_api.blueprint)
+    api.add_resource(UsersListResource, '/api/v2/users')
+    api.add_resource(UsersResource, '/api/v2/users/<int:news_id>')
     app.run(port=8080, host='127.0.0.1')
