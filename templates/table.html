@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h2>Оформление каюты</h2>
+    <table>
+        <tr>
+            <th>Цвет стен</th>
+            <th>Эмблема</th>
+        </tr>
+        <tr>
+            {% if gender == 'female' %}
+                {% if age > 21 %}
+                    <td><img src="{{ url_for('static', filename='images/ino_background_female_big.jpg') }}" style="width: 300px; height: 500px;"> </td>
+                    <td><img src="{{ url_for('static', filename='images/ino_big.jpg') }}" style="width: 300px; height: 500px;"></td>
+                {% else %}
+                    <td><img src="{{ url_for('static', filename='images/ino_background_female_small.jpg') }}" style="width: 300px; height: 500px;"> </td>
+                    <td><img src="{{ url_for('static', filename='images/ino_small.jpg') }}" style="width: 300px; height: 500px;"></td>
+                {% endif %}
+            {% elif gender == 'male' %}
+                {% if age > 21 %}
+                    <td><img src="{{ url_for('static', filename='images/ino_background_male_big.jpg') }}" style="width: 300px; height: 500px;"> </td>
+                    <td><img src="{{ url_for('static', filename='images/ino_big.jpg') }}" style="width: 300px; height: 500px;"></td>
+                {% else %}
+                    <td><img src="{{ url_for('static', filename='images/ino_background_male_small.jpg') }}" style="width: 300px; height: 500px;"> </td>
+                    <td><img src="{{ url_for('static', filename='images/ino_small.jpg') }}" style="width: 300px; height: 500px;"></td>
+                {% endif %}
+            {% endif %}
+        </tr>
+    </table>
+{% endblock %}

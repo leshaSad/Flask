@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h3>Размещение по каютам</h3>
+    {% set part_word = 'Каюта №' %}
+    {% set people = ['Ридли Скотт', 'Энди Уир', 'Марк Уотни', 'Венката Капур', 'Тедди Сандерс', 'Шон Бин'] %}
+    <ul class="list-unstyled">
+        {% for user in people %}
+            <li>{{ user }} - {{ part_word }}{{ loop.index }} {% if loop.first %} - капитан корабля {% endif %}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}

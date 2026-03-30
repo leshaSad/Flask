@@ -2,6 +2,7 @@ import os
 
 from flask import Flask, url_for, request, render_template
 from data import db_session
+from flask_restful import reqparse, abort, Api, Resource
 from data.users import User
 from data.jobs import Jobs
 from add_users import insert_users
@@ -300,43 +301,7 @@ def load_photo():
 
 @app.route('/carousel')
 def carousel():
-    return f"""<!doctype html>
-                    <html lang="en">
-                      <head>
-                        <meta charset="utf-8">
-                        <link rel="stylesheet" type="text/css" href="{url_for('static', filename='css/style.css')}" />
-                        <link rel="stylesheet"
-                    href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
-                    integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
-                    crossorigin="anonymous">
-                        <title>Результаты</title>
-                      </head>
-                      <body>
-                        <h1>Пейзажи Марса</h1>
-                        <div id="carouselExample" class="carousel slide">
-                          <div class="carousel-inner">
-                            <div class="carousel-item active">
-                              <img src="/static/images_for_carusel/landscape1.jpg" class="d-block w-100" alt="landscape1" style="width: 1000px; height: 680px;">
-                            </div>
-                            <div class="carousel-item">
-                              <img src="/static/images_for_carusel/landscape2.jpg" class="d-block w-100" alt="landscape2" style="width: 1000px; height: 680px;">
-                            </div>
-                            <div class="carousel-item">
-                              <img src="/static/images_for_carusel/landscape3.jpg" class="d-block w-100" alt="landscape3" style="width: 1000px; height: 680px;">
-                            </div>
-                          </div>
-                          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Предыдущий</span>
-                          </button>
-                          <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Следующий</span>
-                          </button>
-                        </div>
-                        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
-                      </body>
-                    </html>"""
+    return render_template('carousel.html')
 
 
 @app.route('/')
