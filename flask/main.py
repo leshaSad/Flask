@@ -272,11 +272,13 @@ def load_photo():
                                 integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
                                 crossorigin="anonymous">
                                 <link rel="stylesheet" type="text/css" href="{url_for('static', filename='css/style.css')}" />
-                                <title>Пример формы</title>
+                                <title>Отбор астронавтов</title>
                               </head>
                               <body>
+                              <center>
                                 <h1>Загрузка фотографии</h1>
                                 <h2>Для участия в миссии</h2>
+                              </center>
                                 <div>
                                     <form class="login_form" method="post" enctype="multipart/form-data">
                                         <div class="form-group">
