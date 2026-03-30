@@ -5,12 +5,14 @@ from data import db_session
 from flask_restful import reqparse, abort, Api, Resource
 from data.users import User
 from data.jobs import Jobs
+from data.users_resources import UsersListResource, UsersResource
 from add_users import insert_users
 from add_jobs import insert_jobs
 
 db_sess = db_session.create_session()
 db_session.global_init("db/mars_explorer.db")
 app = Flask(__name__)
+api = Api(app)
 app.config['SECRET_KEY'] = 'yandexlyceum_secret_key'
 answers = {
     'title': 'Анкета',
@@ -22,6 +24,7 @@ answers = {
     'motivation': 'Всегда мечтал застрять на Марсе!',
     'ready': 'True'
 }
+
 
 
 @app.route('/promotion')
@@ -364,4 +367,9 @@ def table(gender, age):
 
 
 if __name__ == '__main__':
+    # для списка объектов
+    api.add_resource(UsersListResource, '/api/v2/news')
+
+    # для одного объекта
+    api.add_resource(UsersResource, '/api/v2/news/<int:news_id>')
     app.run(port=8080, host='127.0.0.1')
