@@ -287,29 +287,11 @@ def choice_planet(planet_name):
 
 @app.route('/results/<nickname>/<int:level>/<float:rating>')
 def result(nickname, level, rating):
-    return f"""<!doctype html>
-                    <html lang="en">
-                      <head>
-                        <meta charset="utf-8">
-                        <link rel="stylesheet" type="text/css" href="{url_for('static', filename='css/style.css')}" />
-                        <link rel="stylesheet"
-                    href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
-                    integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
-                    crossorigin="anonymous">
-                        <title>Результаты</title>
-                      </head>
-                      <body>
-                        <h1>Результаты отбора</h1>
-                        <h2>Претендента на участие в миссии {nickname}:</h2>
-                        <div class="alert alert-primary" role="alert">
-                      Поздравляем ваш рейтинг после {level} этапа отбора
-                        </div>
-                        <h3>составляет {rating}!</h3>
-                        <div class="alert alert-success" role="alert">
-                      Желаем удачи!
-                        </div>
-                      </body>
-                    </html>"""
+    param = {}
+    param['nickname'] = nickname
+    param['level'] = level
+    param['rating'] = rating
+    return render_template('results.html', **param)
 
 
 @app.route('/load_photo', methods=['GET', 'POST'])
