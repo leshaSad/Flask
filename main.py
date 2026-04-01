@@ -98,10 +98,13 @@ def astronaut_selection():
                                 integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
                                 crossorigin="anonymous">
                                 <link rel="stylesheet" type="text/css" href="{url_for('static', filename='css/style.css')}" />
-                                <title>Пример формы</title>
+                                <title>Отбор астронавтов</title>
                               </head>
                               <body>
-                                <h1>Анкета претедента на участие в миссии</h1>
+                              <center>
+                                <h1>Анкета претедента </h1>
+                                <h4>на участие в миссии</h4>
+                              </center>
                                 <div>
                                     <form class="login_form" method="post" enctype="multipart/form-data">
                                         <input type="text" class="form-control" id="surname" aria-describedby="surnameHelp" placeholder="Введите фамилию" name="surname">
@@ -118,45 +121,93 @@ def astronaut_selection():
                                          <div class="form-group">
                                             <label for="form-check">Какие у вас есть профессии?</label>
                                             <div class="form-check">
-                                              <input class="form-check-input" type="checkbox" name="profession" id="prof1" value="инженер-исследователь">
-                                              <label class="form-check-label" for="prof1">инженер-исследователь</label>
-                                            </div>
-                                            <div class="form-check">
-                                              <input class="form-check-input" type="checkbox" name="profession" id="prof2" value="пилот">
-                                              <label class="form-check-label" for="prof2">пилот</label>
-                                            </div>
-                                            <div class="form-check">
-                                              <input class="form-check-input" type="checkbox" name="profession" id="prof3" value="строитель">
-                                              <label class="form-check-label" for="prof3">строитель</label>
-                                            </div>
-                                            <div class="form-check">
-                                              <input class="form-check-input" type="checkbox" name="profession" id="prof4" value="экзобиолог">
-                                              <label class="form-check-label" for="prof4">экзобиолог</label>
-                                            </div>
-                                            <div class="form-check">
-                                              <input class="form-check-input" type="checkbox" name="profession" id="prof5" value="врач">
-                                              <label class="form-check-label" for="prof5">врач</label>
-                                            </div>
-                                            <div class="form-check">
-                                              <input class="form-check-input" type="checkbox" name="profession" id="prof6" value="инженер по терраформированию">
-                                              <label class="form-check-label" for="prof6">инженер по терраформированию</label>
-                                            </div>
-                                            <div class="form-check">
-                                              <input class="form-check-input" type="checkbox" name="profession" id="prof7" value="климатолог">
-                                              <label class="form-check-label" for="prof7">климатолог</label>
-                                            </div>
-                                            <div class="form-check">
-                                              <input class="form-check-input" type="checkbox" name="profession" id="prof8" value="специалист по радиационной защите">
-                                              <label class="form-check-label" for="prof8">специалист по радиационной защите</label>
-                                            </div>
-                                            <div class="form-check">
-                                              <input class="form-check-input" type="checkbox" name="profession" id="prof9" value="астрогеолог">
-                                              <label class="form-check-label" for="prof9">астрогеолог</label>
-                                            </div>
-                                            <div class="form-check">
-                                              <input class="form-check-input" type="checkbox" name="profession" id="prof10" value="гляциолог">
-                                              <label class="form-check-label" for="prof10">гляциолог</label>
-                                            </div>
+                                      <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" >
+                                      <label class="form-check-label" for="flexCheckChecked">
+                                        инженер-исследователь
+                                      </label>
+                                    </div>
+                                    <div class="form-check">
+                                      <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" >
+                                      <label class="form-check-label" for="flexCheckChecked">
+                                        пилот
+                                      </label>
+                                    </div>
+                                    <div class="form-check">
+                                      <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" >
+                                      <label class="form-check-label" for="flexCheckChecked">
+                                        строитель
+                                      </label>
+                                    </div>
+                                    <div class="form-check">
+                                      <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" >
+                                      <label class="form-check-label" for="flexCheckChecked">
+                                        экзобиолог
+                                      </label>
+                                    </div>
+                                    <div class="form-check">
+                                      <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" >
+                                      <label class="form-check-label" for="flexCheckChecked">
+                                        врач
+                                      </label>
+                                    </div>
+                                    <div class="form-check">
+                                      <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" >
+                                      <label class="form-check-label" for="flexCheckChecked">
+                                        инженер по терраформированию
+                                      </label>
+                                    </div>
+                                    <div class="form-check">
+                                      <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" >
+                                      <label class="form-check-label" for="flexCheckChecked">
+                                        климатолог
+                                      </label>
+                                    </div>
+                                    <div class="form-check">
+                                      <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" >
+                                      <label class="form-check-label" for="flexCheckChecked">
+                                        специалист по радиационной защите
+                                      </label>
+                                    </div>
+                                    <div class="form-check">
+                                      <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" >
+                                      <label class="form-check-label" for="flexCheckChecked">
+                                        астрогеолог
+                                      </label>
+                                    </div><div class="form-check">
+                                      <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" >
+                                      <label class="form-check-label" for="flexCheckChecked">
+                                        гляциолог
+                                      </label>
+                                    </div><div class="form-check">
+                                      <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" >
+                                      <label class="form-check-label" for="flexCheckChecked">
+                                        инженер жизнеобеспечения
+                                      </label>
+                                    </div><div class="form-check">
+                                      <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" >
+                                      <label class="form-check-label" for="flexCheckChecked">
+                                        метеоролог
+                                      </label>
+                                    </div><div class="form-check">
+                                      <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" >
+                                      <label class="form-check-label" for="flexCheckChecked">
+                                        оператор марсохода
+                                      </label>
+                                    </div><div class="form-check">
+                                      <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" >
+                                      <label class="form-check-label" for="flexCheckChecked">
+                                        киберинженер
+                                      </label>
+                                    </div><div class="form-check">
+                                      <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" >
+                                      <label class="form-check-label" for="flexCheckChecked">
+                                        штурман
+                                      </label>
+                                    </div><div class="form-check">
+                                      <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" >
+                                      <label class="form-check-label" for="flexCheckChecked">
+                                        пилот дронов
+                                      </label>
                                         </div>
                                         <div class="form-group">
                                             <label for="form-check">Укажите пол</label>
