@@ -16,8 +16,8 @@ api = Api(app)
 app.config['SECRET_KEY'] = 'yandexlyceum_secret_key'
 answers = {
     'title': 'Анкета',
-    'surname': 'Watny',
-    'name': 'Mark',
+    'surname': 'King',
+    'name': 'Leha',
     'education': 'выше среднего',
     'profession': 'штурман марсохода',
     'sex': 'male',
@@ -389,6 +389,7 @@ def spisok(listing):
 @app.route('/answer')
 @app.route('/auto_answer')
 def answer():
+    print(answers)
     return render_template('auto_answer.html', **answers)
 
 
