@@ -375,6 +375,7 @@ def index():
 def training(prof):
     param = {}
     param['profession'] = prof
+    print(param)
     return render_template('prof.html', **param)
 
 
