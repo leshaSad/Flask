@@ -314,8 +314,24 @@ def astronaut_selection():
 
 @app.route('/choice/<planet_name>')
 def choice_planet(planet_name):
-    planet['planet_name'] = planet_name
-    return render_template('choice.html', **planet)
+    # Проверяем, существует ли такая планета
+    if planet_name not in planet['name']:
+        return f'''
+                <!DOCTYPE html>
+                <html>
+                <head><title>Ошибка</title><meta charset="utf-8"></head>
+                <body>
+                    <h1>❌ Планета { planet_name } не найдена!</h1>
+                    <a href="/">Вернуться на главную</a>
+                </body>
+                </html>
+            '''
+
+    # Получаем данные о планете если она есть
+    planet_facts = planet['name'][planet_name]
+    fist_fact = planet_facts['1']
+    del planet_facts['1']
+    return render_template('choice.html', p=planet_facts, planet=planet_name, f_p=fist_fact)
 
 @app.route('/results/<nickname>/<int:level>/<float:rating>')
 def result(nickname, level, rating):

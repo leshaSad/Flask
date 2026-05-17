@@ -9,20 +9,24 @@
                     crossorigin="anonymous">
                         <title>Варианты выбора!</title>
                       </head>
-                      <body>
-                        <h1>Мое предложение: {planet_name}</h1>
-                        <h2>Эта планета близка к Земле;</h2>
-                        <div class="alert alert-primary" role="alert">
-                      На ней много необходимых ресурсов;
-                        </div>
-                        <div class="alert alert-success" role="alert">
-                      На ней есть вода и атмосфера;
-                        </div>
-                        <div class="alert alert-secondary" role="alert">
-                      На ней есть небольшое магнитное поле;
-                        </div>
-                        <div class="alert alert-warning" role="alert">
-                      Наконец, она просто красива!
-                        </div>
+                        <h2>Мое предложение {{ planet }}</h2>
+
+                        <h7>{{ f_p }}</h7>
+                      {% for num, facts in p.items() %}
+                            {% if num == '1' %}
+                                {% set color = 'primary' %}
+                            {% elif num == '2' %}
+                                {% set color = 'success' %}
+                            {% elif num == '3' %}
+                                {% set color = 'danger' %}
+                            {% elif num == '4' %}
+                                {% set color = 'warning' %}
+                            {% else %}
+                               {% set color = 'info' %}
+                            {% endif %}
+                      <div class="alert alert-{{ color }}" role="alert">
+                            {{ facts }}
+                        </div>{% endfor %}
+
                       </body>
                     </html>
